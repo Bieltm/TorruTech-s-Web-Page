@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TorruTech</title>
+    <style type="text/css">
+        .img-black {
+            padding: 10px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between; /* Separa el bloc de left amb el de right */
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .left, .right {
+            display: flex; /* Per colocar horitzontalment */
+            align-items: center; /* Per colocar al centre vertical */
+            gap: 40px; /*Separació de 40px*/
+            flex-wrap: wrap; /* Permet que si no hi ha prou espai baixi a la seguent linea */
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact-item p {
+            margin: 0;
+        }
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .img-logo{
+            padding: 10px;
+        }
+        body{
+        font-style: Arial, Helvetica, sans-serif;
+        background-image: url("bckg.png");
+        }
+        .container{
+        background-color: white;
+        width: 60%;
+        padding: 10px;
+        }
+        .container .ul{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        }
+        .container .li {
+            background-color: #f0f0f0;
+            padding: 15px 25px;
+            margin: 20px;
+            border-radius: 10px; /*Arrodoniment de els bordes de els quadrats*/
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer; /*Al estar hover, es torna una ma*/
+            transition: background-color 0.3s ease, transform 0.2s ease; /*animació suau*/
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /*afegeix una hombra*/
+            list-style: none; /*elimina els -*/
+        }
+
+        .container .li:hover {
+            background-color: #d0ebff; /* El hover es quan el ratoli esta damunt del botó: Cambia el color i puja una mica la posicio de el botó*/
+            transform: translateY(-2px);
+        }
+
+        .container .li.activo {
+            background-color: #74c0fc;
+            color: white;
+            font-weight: 600;
+        }
+
+        .container .subcontainer{
+        min-height: 10vh;
+        position: relative;
+        }
+        .container .bloque{
+            width: 95%;
+            visibility: hidden;
+            background-color: whitesmoke;
+            padding: 10px;
+            margin: 10px;
+            position: absolute;
+            transition: all .5s ease;
+            pointer-events: none; /*Aixo m'ha salvat un bug en el que el mapa es menjava al formulari*/
+        }
+        .container .bloque.activo{
+            visibility: visible;
+            pointer-events: auto;
+        }
+        form{
+            padding: 50px 55px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .blog-div{
+            padding: 50px 55px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .space{
+            height: 500px;
+            width: 60%;
+        }
+        .exemple{
+            display: flex;
+            position: absolute bottom;
+            justify-content: start;
+        }
+    </style>
+</head>
+<body>
+    <div class="img-black">
+        <!-- Bloc esquerre: info de contacte -->
+        <div class="left">
+            <div class="contact-item">
+                <img src='ubi.png' height="24"/>
+                <p>C/Sant Jaume 32, Almacelles</p>
+            </div>
+            <div class="contact-item">
+                <img src='llamar.png' height="24"/>
+                <p>744 482 609</p>
+            </div>
+            <div class="contact-item">
+                <img src='buzon.png' height="24"/>
+                <p>info@torrutech.cat</p>
+            </div>
+            <div class="contact-item">
+                <img src='eye.png' height="24"/>
+                <a href="https://www.hitwebcounter.com" target="_blank">
+                <img src="https://hitwebcounter.com/counter/counter.php?page=21119093&style=0010&nbdigits=2&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a> 
+            </div>
+        </div>
+        <!-- Bloc dret: xarxes socials -->
+        <div class="right">
+            <a href="https://www.instagram.com/torrutech/" target="_blank">
+                <button>
+                    <img src="inst.png" height="30" width="30" />
+                </button>
+            </a>
+            <a href="https://www.facebook.com/torrutechalmacelles" target="_blank">
+                <button>
+                    <img src="fb.png" height="30" width="30" />
+                </button>
+            </a>
+        </div>
+    </div>
+    <div class="img-logo">
+        <img src="tt.png" height="60"/>
+    </div>
+    <div class="container">
+        <ul class="ul">
+            <li class="li">Blog</li>
+            <li class="li">Preguntan's qualsevol cosa</li>
+            <li class="li">Com ens pots trovar</li>
+        </ul>
+        <div class="subcontainer">
+            <div class="bloque">
+                <div class="blog-div"></div>
+            </div>
+            <div class="bloque">
+                <form action="https://formsubmit.co/info@torrutech.cat" method="POST">
+                    <h2>Formulari</h2>
+                    <div class="input-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" name="name" id="name" placeholder="Marc">
+                        <br>
+                        <label for="lastname">Cognom:</label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Marti">
+                        <br>
+                        <label for="email">Correu:</label>
+                        <input type="email" name="email" id="email" placeholder="exemple@mail.com">
+                        <br>
+                        <label for="msg">Missatge:</label>
+                        <textarea type="text" name="msg" id="msg" placeholder="Missatge" cols="20" rows="5"></textarea>
+                        <br>
+                        <input class="btn" type="submit" value="Enviar">
+                    </div>
+                </form>
+            </div>
+            <div class="bloque">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1634.9432159161881!2d0.4382196403674276!3d41.73061572486711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a7106f67c65db3%3A0x389d6d1a817c9b57!2sTorrutech!5e1!3m2!1ses!2ses!4v1750785053148!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <!--A la constant blog_info, hi ha els textos que s'han de escriure-->
+    <script>
+    const li = document.querySelectorAll('.li');
+    const bloque = document.querySelectorAll('.bloque');
+    li.forEach( (cadaLi, i) => {
+      
+      li[i].addEventListener('click', () => {
+        li.forEach((cadaLi, i)=>{
+          li[i].classList.remove('activo')
+          bloque[i].classList.remove('activo')
+        })
+
+        li[i].classList.add('activo')
+        bloque[i].classList.add('activo')
+      })
+    })
+    const blog_info = [
+            {titol: 'Titol1', text:'Text1'},
+            {titol: 'Titol2', text: 'Text2'},
+            {titol: 'Titol 3', text: 'Text 3'}
+        ]
+    let parts = document.querySelector('.blog-div');
+        function dinamico(titol, text){
+            let div = document.createElement("div");
+            let h = document.createElement("h2")
+            h.innerHTML = titol;
+            let p = document.createElement("p");
+            p.innerHTML = text;
+            div.appendChild(h)
+            div.appendChild(p);
+            parts.appendChild(div);
+        }
+        blog_info.forEach(({titol, text, img}) => dinamico(titol, text, img));
+  </script>
+  <div class="space"></div>
+  <div class="exemple">
+    <p>Text de exemple</p>
+  </div>
+</body>
+</html>
